@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EstateHub By Webotapp - Installation Guide</title>
+    <style>
+        :root {
+            --neon: #39FF14;
+            --brand: #0f172a;
+            --slate-50: #f8fafc;
+            --slate-100: #f1f5f9;
+            --slate-200: #e2e8f0;
+            --slate-700: #334155;
+            --slate-800: #1e293b;
+            --slate-900: #0f172a;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: #090d16;
+            color: #cbd5e1;
+            line-height: 1.65;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 860px;
+            margin: 0 auto;
+            background: #0f172a;
+            border: 1px solid #1e293b;
+            border-radius: 24px;
+            padding: 48px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+        .badge {
+            display: inline-block;
+            background: rgba(57, 255, 20, 0.12);
+            color: var(--neon);
+            border: 1px solid rgba(57, 255, 20, 0.3);
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            padding: 4px 12px;
+            border-radius: 9999px;
+            margin-bottom: 12px;
+        }
+        h1 {
+            color: #ffffff;
+            font-size: 32px;
+            font-weight: 900;
+            margin-bottom: 8px;
+            letter-spacing: -0.02em;
+        }
+        .subtitle {
+            color: #94a3b8;
+            font-size: 16px;
+            margin-bottom: 32px;
+        }
+        .banner {
+            background: linear-gradient(135deg, rgba(6, 78, 59, 0.8), rgba(15, 23, 42, 0.9));
+            border: 1px solid rgba(16, 185, 129, 0.4);
+            border-radius: 16px;
+            padding: 20px 24px;
+            margin-bottom: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        .banner-text h3 {
+            color: #fff;
+            font-size: 16px;
+            font-weight: 800;
+            margin-bottom: 4px;
+        }
+        .banner-text p {
+            color: #a7f3d0;
+            font-size: 13px;
+        }
+        .btn-wa {
+            background: #10b981;
+            color: #000;
+            font-weight: 800;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 12px 20px;
+            border-radius: 12px;
+            text-decoration: none;
+            white-space: nowrap;
+            display: inline-block;
+            transition: all 0.2s;
+        }
+        .btn-wa:hover {
+            background: #34d399;
+        }
+        h2 {
+            color: #fff;
+            font-size: 20px;
+            font-weight: 800;
+            margin-top: 36px;
+            margin-bottom: 16px;
+            border-bottom: 1px solid #1e293b;
+            padding-bottom: 8px;
+        }
+        ol, ul {
+            padding-left: 24px;
+            margin-bottom: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        code, .code-box {
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+            background: #020617;
+            border: 1px solid #1e293b;
+            border-radius: 8px;
+            padding: 2px 6px;
+            color: var(--neon);
+            font-size: 13px;
+        }
+        .code-box {
+            display: block;
+            padding: 16px;
+            margin: 14px 0;
+            overflow-x: auto;
+        }
+        .card {
+            background: #020617;
+            border: 1px solid #1e293b;
+            border-radius: 16px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .card h4 {
+            color: #fff;
+            margin-bottom: 8px;
+            font-size: 14px;
+            font-weight: 700;
+        }
+        .grid-cred {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 10px;
+        }
+        .grid-cred div {
+            background: #0f172a;
+            padding: 12px 16px;
+            border-radius: 10px;
+            border: 1px solid #1e293b;
+        }
+        .grid-cred span {
+            font-size: 11px;
+            text-transform: uppercase;
+            color: #64748b;
+            font-weight: 700;
+            display: block;
+        }
+        .grid-cred strong {
+            color: #fff;
+            font-size: 14px;
+            font-family: monospace;
+        }
+        .step-num {
+            display: inline-flex;
+            width: 24px;
+            height: 24px;
+            background: var(--neon);
+            color: #000;
+            border-radius: 50%;
+            font-size: 12px;
+            font-weight: 900;
+            align-items: center;
+            justify-content: center;
+            margin-right: 8px;
+        }
+        .license-card {
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.95));
+            border: 1px solid rgba(56, 189, 248, 0.35);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 36px;
+        }
+        .license-card h3 {
+            color: #38bdf8;
+            font-size: 18px;
+            font-weight: 800;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .license-option {
+            background: rgba(2, 6, 23, 0.7);
+            border: 1px solid #1e293b;
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin-top: 12px;
+        }
+        .license-option h4 {
+            color: #fff;
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .btn-activate {
+            display: inline-block;
+            background: #38bdf8;
+            color: #0f172a;
+            font-weight: 800;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 10px 18px;
+            border-radius: 10px;
+            text-decoration: none;
+            margin-top: 10px;
+            transition: all 0.2s;
+        }
+        .btn-activate:hover {
+            background: #7dd3fc;
+        }
+        footer {
+            margin-top: 48px;
+            padding-top: 24px;
+            border-top: 1px solid #1e293b;
+            text-align: center;
+            font-size: 12px;
+            color: #64748b;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <span class="badge">Official Documentation</span>
+    <h1>EstateHub — Layman Installation Manual</h1>
+    <p class="subtitle">Complete, step-by-step setup guide for deploying EstateHub Real Estate script on any server or web hosting.</p>
+
+    <!-- WhatsApp Support Banner -->
+    <div class="banner">
+        <div class="banner-text">
+            <h3>Problems in installing? WhatsApp: +91 7002484119</h3>
+            <p>We do complete installation, server setup, and configuration at as low as <strong>at min price</strong>.</p>
+        </div>
+        <a href="https://wa.me/917002484119?text=Hi%20WebotApp%2C%20I%20need%20help%20with%20EstateHub%20installation%20(setup%20at%20min%20price)" target="_blank" class="btn-wa">Message on WhatsApp</a>
+    </div>
+
+    <!-- License Key Activation Section -->
+    <div class="license-card">
+        <h3>🔑 How to Get & Activate Your License Key</h3>
+        <p style="font-size: 14px; color: #cbd5e1;">A valid WebotApp license key (format: <code>WEBOT-REAL-REG-XXXX-XXXX-XXXX</code>) is required to unlock Step 2 of the Web Installer.</p>
+
+        <div class="license-option" style="border-color: rgba(56, 189, 248, 0.4);">
+            <h4>Option A: Purchased on CodeCanyon, Codester, or External Marketplaces</h4>
+            <p style="font-size: 13px; color: #94a3b8; margin-bottom: 8px;">
+                If you purchased on <strong>CodeCanyon (Envato)</strong>, <strong>Codester</strong>, or an authorized partner, use our 30-second automated license claim portal to generate your official key:
+            </p>
+            <ol style="font-size: 13px; color: #cbd5e1; margin-bottom: 12px; padding-left: 20px;">
+                <li>Open the activation portal: <a href="https://lab.webotapp.com/activate" target="_blank" style="color: #38bdf8; font-weight: 700;">https://lab.webotapp.com/activate</a></li>
+                <li>Select your marketplace (<strong>CodeCanyon</strong> or <strong>Codester</strong>) and select <strong>EstateHub Real Estate Platform</strong>.</li>
+                <li>Enter your marketplace <strong>Purchase Code</strong> or <strong>Order ID</strong> (found in your marketplace Downloads receipt).</li>
+                <li>Enter your Name, Email, and WhatsApp Phone Number.</li>
+                <li>Click <strong>"Verify Order & Issue Official License Key"</strong> to generate your unique key instantly.</li>
+            </ol>
+            <a href="https://lab.webotapp.com/activate" target="_blank" class="btn-activate">👉 Claim License Key on WebotApp Portal</a>
+        </div>
+
+        <div class="license-option">
+            <h4>Option B: Purchased Directly on WebotApp Lab</h4>
+            <p style="font-size: 13px; color: #94a3b8; margin-bottom: 4px;">
+                Your official license key is already generated and waiting in your account:
+            </p>
+            <ol style="font-size: 13px; color: #cbd5e1; margin-bottom: 0; padding-left: 20px;">
+                <li>Log in to your account at <a href="https://lab.webotapp.com/dashboard" target="_blank" style="color: #38bdf8;">https://lab.webotapp.com/dashboard</a>.</li>
+                <li>Navigate to the <strong>Downloads / Products</strong> tab.</li>
+                <li>Click <strong>"Copy License Key"</strong> next to EstateHub.</li>
+            </ol>
+        </div>
+    </div>
+
+    <h2>1. System Requirements</h2>
+    <ul>
+        <li><strong>PHP Version:</strong> PHP 8.2 or PHP 8.3 (Recommended)</li>
+        <li><strong>Database:</strong> MySQL 5.7+ or MariaDB 10.3+</li>
+        <li><strong>Web Server:</strong> Apache (with <code>mod_rewrite</code> enabled) or Nginx</li>
+        <li><strong>Required PHP Extensions:</strong> BCMath, Ctype, cURL, DOM, Fileinfo, JSON, Mbstring, OpenSSL, PCRE, PDO, pdo_mysql, Tokenizer, XML</li>
+        <li><strong>Writable Directories:</strong> <code>storage/</code> and <code>bootstrap/cache/</code></li>
+    </ul>
+
+    <h2>2. Quick 3-Step Layman Web Installation</h2>
+
+    <p><span class="step-num">1</span><strong>Upload Code to Your Web Server</strong></p>
+    <ul>
+        <li>Extract the downloaded <code>.zip</code> package on your computer.</li>
+        <li>Upload all files into your web hosting directory (e.g. <code>public_html</code> in cPanel, or <code>/var/www/html</code>, or XAMPP <code>htdocs/realestate</code>).</li>
+        <li>Make sure your domain or web server points to the project root (where <code>index.php</code> is located) or <code>public/</code>.</li>
+    </ul>
+
+    <p><span class="step-num">2</span><strong>Launch the 2-Minute Web Installer</strong></p>
+    <ul>
+        <li>Open your browser and visit your website URL:
+            <div class="code-box">https://your-domain.com/</div>
+        </li>
+        <li>The system will automatically redirect you to the <strong>Layman Web Installer</strong>:
+            <div class="code-box">https://your-domain.com/install</div>
+        </li>
+    </ul>
+
+    <p><span class="step-num">3</span><strong>Fill Step 1: Customer Details & Purchase Code</strong></p>
+    <ul>
+        <li><strong>Name:</strong> Your Full Name.</li>
+        <li><strong>Phone:</strong> Select your country code from the dropdown (e.g. 🇮🇳 +91 India, 🇺🇸 +1 US, 🇦🇪 +971 UAE) and enter your mobile number.</li>
+        <li><strong>Email:</strong> Your active email address.</li>
+        <li><strong>Purchase Code:</strong> Enter the official purchase code provided in your download package or Webotapp Lab Dashboard (e.g. <code>WEBOT-REAL-XXXX-XXXX-XXXX</code>).</li>
+        <li>Click <strong>"Verify Code & Continue"</strong>.</li>
+    </ul>
+
+    <p><span class="step-num">4</span><strong>Fill Step 2: Database Credentials</strong></p>
+    <ul>
+        <li><strong>Database Host:</strong> <code>127.0.0.1</code> (or <code>localhost</code>)</li>
+        <li><strong>Database Port:</strong> <code>3306</code></li>
+        <li><strong>Database Name:</strong> Name of your database (e.g. <code>realestate</code>). If it doesn't exist, the wizard will auto-create it!</li>
+        <li><strong>Database Username:</strong> Your MySQL username (e.g. <code>root</code> or your cPanel db user)</li>
+        <li><strong>Database Password:</strong> Your MySQL password</li>
+        <li>Click <strong>"Test Connection"</strong> to verify, then click <strong>"Start Installation & Migrate"</strong>.</li>
+    </ul>
+
+    <h2>3. Default Administrator Account</h2>
+    <div class="card">
+        <h4>Super Admin Credentials (Auto-Configured)</h4>
+        <p style="font-size: 13px; color: #94a3b8;">Use these credentials to access the admin moderation panel:</p>
+        <div class="grid-cred">
+            <div>
+                <span>Login Email</span>
+                <strong>admin@estatehub.com</strong>
+            </div>
+            <div>
+                <span>Password</span>
+                <strong>password</strong>
+            </div>
+        </div>
+        <p style="font-size: 11px; color: #64748b; margin-top: 12px;">* You can change your email and password anytime in the Admin Dashboard under Profile Settings.</p>
+    </div>
+
+    <h2>4. One-Click Auto-Update Facility</h2>
+    <p>EstateHub includes a built-in auto-update engine in the Admin Dashboard:</p>
+    <ul>
+        <li>Login to Admin Dashboard at <code>https://your-domain.com/admin</code>.</li>
+        <li>Navigate to <strong>System Updates</strong> (or click the update notification banner).</li>
+        <li>Click <strong>"Check for Updates"</strong> to fetch official release packages and changelogs.</li>
+        <li>Click <strong>"One-Click Update Now"</strong> to automatically apply database patches, update system components, and clear cache without data loss.</li>
+    </ul>
+
+    <h2>5. Need Professional Setup or Customization?</h2>
+    <div class="banner">
+        <div class="banner-text">
+            <h3>Installation Service: at min price</h3>
+            <p>Custom Feature Development: Starts from Rs 24,999</p>
+        </div>
+        <a href="https://wa.me/917002484119?text=Hi%20WebotApp%2C%20I%20want%20to%20order%20EstateHub%20services" target="_blank" class="btn-wa">Chat on WhatsApp</a>
+    </div>
+
+    <footer>
+        EstateHub Real Estate Platform &copy; 2026 WebotApp Lab (https://lab.webotapp.com). All rights reserved.
+    </footer>
+</div>
+
+</body>
+</html>

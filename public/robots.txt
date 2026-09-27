@@ -1,0 +1,22 @@
+# EstateHub Robots Directive
+User-agent: *
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /staff/
+Disallow: /profile
+Disallow: /login
+Disallow: /register
+Disallow: /api/
+Allow: /
+Allow: /properties
+Allow: /about
+Allow: /contact
+Allow: /sitemap.xml
+Allow: /llms.txt
+Allow: /llms-full.txt
+
+# Search Engine & AI Agent Sitemaps
+Sitemap: http://127.0.0.1:8000/sitemap.xml
+# LLM Discovery File
+# See: http://127.0.0.1:8000/llms.txt
+
